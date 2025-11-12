@@ -1,0 +1,31 @@
+plugins {
+    id 'application'
+    id 'org.jetbrains.kotlin.jvm' version '2.2.0'
+    id "com.google.devtools.ksp" version "2.2.0-2.0.2"
+}
+
+group = 'net.asere.kotlin'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "io.ktor:ktor-server-core:3.0.3"
+    implementation "io.ktor:ktor-server-netty:3.0.3"
+    implementation "io.ktor:ktor-server-html-builder:3.0.3"
+    implementation "net.asere.kthot:kthot:0.1.14"
+    implementation "net.asere.kthot:kthot-html:0.1.14"
+    implementation "net.asere.kthot:kthot-dom:0.1.14"
+    implementation "net.asere.kthot:kthot-ksp:0.1.14"
+    ksp "net.asere.kthot:kthot-ksp:0.1.14"
+    testImplementation 'org.jetbrains.kotlin:kotlin-test'
+}
+
+test {
+    useJUnitPlatform()
+}
+kotlin {
+    jvmToolchain(21)
+}
